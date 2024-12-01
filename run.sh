@@ -1,4 +1,4 @@
-#! bin/sh
+#!/bin/sh
 
 #set the variable $last to the folder name
 last=$(cat last.txt)
@@ -18,11 +18,11 @@ echo "$last" > last.txt
 
 
 #build (cmake is smart, so if its built alr, nothing will change)
-cmake -S "./$last/" -B "./$last/build" -G "MinGW Makefiles"
+cmake -S "./$last/" -B "./$last/build" -G "Unix Makefiles"
 
 #and now build
 cd "./$last/build" ; 
-mingw32-make ; 
+make ; 
 echo ; read -p "Press any key to run the program..." waitin ;
 echo ; echo ;
 
@@ -30,7 +30,7 @@ echo ; echo ;
 cd .. ;
 echo "Program output:" ;
 echo ;
-".\\build\\$last.exe" ;
+"./build//$last" ;
 
 #and say goodbye
 echo ; echo ;

@@ -1,4 +1,4 @@
-#! bin/sh
+#!/bin/sh
 
 check_copy(){
     if [ -d "$1" ]; then
